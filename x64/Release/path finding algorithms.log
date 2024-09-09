@@ -1,9 +1,10 @@
-﻿  path finding algorithms.cpp
-C:\Users\48664\Desktop\path finding algorithms\path finding algorithms\path finding algorithms.cpp(15,24): warning C4244: "inicjowanie": konwersja z "float" do "unsigned int", możliwa utrata danych
-C:\Users\48664\Desktop\path finding algorithms\path finding algorithms\path finding algorithms.cpp(16,25): warning C4244: "inicjowanie": konwersja z "float" do "unsigned int", możliwa utrata danych
+﻿  Board.cpp
+C:\Users\48664\Desktop\path finding algorithms\path finding algorithms\Board.cpp(19,25): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\48664\Desktop\path finding algorithms\path finding algorithms\Board.cpp(19,23): warning C4244: "argument": konwersja z "int" do "float", możliwa utrata danych
+C:\Users\48664\Desktop\path finding algorithms\path finding algorithms\Board.cpp(25,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
   Trwa generowanie kodu
-  2 of 279 functions ( 0.7%) were compiled, the rest were copied from previous compilation.
+  3 of 282 functions ( 1.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    4 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   Zakończono generowanie kodu
   path finding algorithms.vcxproj -> C:\Users\48664\Desktop\path finding algorithms\x64\Release\path finding algorithms.exe

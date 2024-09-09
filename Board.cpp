@@ -1,7 +1,9 @@
-#include "Board.h"
-#include <iostream>
 #include "Cell.h"
+#include "Board.h"
+#include "Dijkstra.h"
 #include <string>
+#include <iostream>
+
 
 using namespace std;
 
@@ -44,6 +46,31 @@ bool Board::getGeneratingStatus() {
 	return generating;
 }
 
+void Board::ChooseEnterAndExit() {
+	bool found_en = false;
+	int x_en;
+	int y_en;
+	while (!found_en) {
+		x_en = rand() % board_width;
+		y_en = rand() % board_height;
+		if (cell_tab[y_en][x_en].getStatus() == Drawed) {
+			found_en = true;
+			cell_tab[y_en][x_en].setStatus(Enter);
+		}
+	}
+	bool found_ex = false;
+	int x_ex;
+	int y_ex;
+	while (!found_ex) {
+		x_ex = rand() % board_width;
+		y_ex = rand() % board_height;
+		if (cell_tab[y_ex][x_ex].getStatus() == Drawed && pow(pow(x_ex - x_en,2)+ pow(y_ex - y_en,2),0.5f)>0.5f * pow(pow(board_width,2)+pow(board_height,2),0.5f)){
+			found_ex = true;
+			cell_tab[y_ex][x_ex].setStatus(Exit);
+			
+		}
+	}
+}
 
 
 //universal functions 
@@ -98,7 +125,7 @@ void Board::Draw_Random_Cell() {
 
 
 //Depth-First search
-vector<vector<Cell>> Board::Depth_First_search_CreateMaze() {
+vector<vector<Cell>>& Board::Depth_First_search_CreateMaze() {
 	while (generating) {
 		int cell_x = head_hak->getCoords().first;
 		int cell_y = head_hak->getCoords().second;
@@ -170,6 +197,7 @@ vector<vector<Cell>> Board::Depth_First_search_CreateMaze() {
 			}
 			else {
 				generating = false;
+				ChooseEnterAndExit();
 			}
 
 		}

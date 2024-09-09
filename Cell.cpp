@@ -27,7 +27,13 @@ void Cell::setStatus(Status status) {
 	else if (status == Other) {
 		this->shape.setFillColor(Color::Black);
 	}
-	else {
+	else if (status == Enter) {
+		this->shape.setFillColor(Color::Blue);
+	}
+	else if (status == Exit) {
+		this->shape.setFillColor(Color::Magenta);
+	}
+	else if (status == Path) {
 		this->shape.setFillColor(Color::Green);
 	}
 

@@ -8,7 +8,10 @@ enum Status {
 	Drawed,
 	Neighbour,
 	Other,
-	Head
+
+	Enter,
+	Exit,
+	Path
 };
 
 class Cell :public Drawable

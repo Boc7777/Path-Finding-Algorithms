@@ -23,7 +23,8 @@ public:
 	bool getGeneratingStatus();
 
 
-	vector<vector<Cell>> Depth_First_search_CreateMaze();
+	vector<vector<Cell>>& Depth_First_search_CreateMaze();
+	void ChooseEnterAndExit();
 
 	
 private:

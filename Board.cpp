@@ -53,7 +53,7 @@ void Board::ChooseEnterAndExit() {
 	while (!found_en) {
 		x_en = rand() % board_width;
 		y_en = rand() % board_height;
-		if (cell_tab[y_en][x_en].getStatus() == Drawed) {
+		if (cell_tab[y_en][x_en].getStatus() == Drawed && x_en %2 ==1 && y_en %2 == 1) {
 			found_en = true;
 			cell_tab[y_en][x_en].setStatus(Enter);
 		}
@@ -64,13 +64,14 @@ void Board::ChooseEnterAndExit() {
 	while (!found_ex) {
 		x_ex = rand() % board_width;
 		y_ex = rand() % board_height;
-		if (cell_tab[y_ex][x_ex].getStatus() == Drawed && pow(pow(x_ex - x_en,2)+ pow(y_ex - y_en,2),0.5f)>0.5f * pow(pow(board_width,2)+pow(board_height,2),0.5f)){
+		if (cell_tab[y_ex][x_ex].getStatus() == Drawed && x_ex % 2 == 1 && y_ex % 2 == 1 &&pow(pow(x_ex - x_en,2)+ pow(y_ex - y_en,2),0.5f)>0.5f * pow(pow(board_width,2)+pow(board_height,2),0.5f)){
 			found_ex = true;
 			cell_tab[y_ex][x_ex].setStatus(Exit);
 			
 		}
 	}
 }
+
 
 
 //universal functions 

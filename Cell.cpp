@@ -15,7 +15,6 @@ Status Cell::getStatus() {
 	return this->status;
 }
 
-
 void Cell::setStatus(Status status) {
 	this->status = status;
 	if (status == Drawed) {
